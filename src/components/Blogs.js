@@ -1,47 +1,28 @@
-const blogs = [
-    {
-        id: 1,
-        title: "Blog 1",
-        date: "2021-01-01",
-        author: 'John Doe',
-        summary: "This is the first blog",
-        body: "This is the body of the first blog"
-    },
-    {
-        id: 2,
-        title: "Blog 2",
-        date: "2021-01-02",
-        author: 'Harsha Ky',
-        summary: "This is the second blog",
-        body: "This is the body of the second blog"
-    },
-    {
-        id: 3,
-        title: "Blog 3",
-        date: "2021-01-03",
-        author: 'Sahana Reddy',
-        summary: "This is the third blog",
-        body: "This is the body of the third blog"
-    },
-    {
-        id: 4,
-        title: "Blog 4",
-        date: "2021-01-04",
-        author: 'Suhothra Reddy',
-        summary: "This is the fourth blog",
-        body: "This is the body of the fourth blog"
-    }
-]
+import { useEffect, useState } from "react";
+import xml2js from 'xml2js';
 
 const Blogs = () => {
+    const [blogs, setBlogs] = useState([]);
+
+    useEffect(() => {
+        fetch('/blog_post_example.xml')
+            .then((response) => 
+            response.text())
+            .then((data) => {
+                xml2js.parseString(data, (err, result) => {
+                    setBlogs(result.blog.post);
+                });
+            });
+    }, []);
+
     return (
         <>
             {blogs.map((blog) => (
-                <div key={blog.id}>
-                    <h1>{blog.title}</h1>
-                    <p>{blog.date}</p>
-                    <p>{blog.author}</p>
-                    <p>{blog.summary}</p>
+                <div key={blog.id[0]}>
+                    <h1>{blog.author[0]}</h1>
+                    <p>{blog.date[0]}</p>
+                    <p>{blog.summary[0]['text']}</p>
+                    <img className="summaryImage" src={blog.summary[0]['image_path']} alt={blog.summary[0]['text']} />
                 </div>
             ))}
         </>
