@@ -1,6 +1,6 @@
 const Header = ({ title }) => {
   return (
-    <header>
+    <header className="header">
         <h1 style={headingStyle}>{title}</h1>
     </header>
   )
@@ -12,7 +12,9 @@ Header.defaultProps = {
 
 const headingStyle = {
     color: 'pink',
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+    width: '100%',
+    textAlign: 'center'
 }
 
 export default Header

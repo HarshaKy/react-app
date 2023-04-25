@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer style={footerStyle}>
+        <footer className="footer" style={footerStyle}>
             <p>CopyRight &copy; 2023</p>
         </footer>
     )
@@ -9,6 +9,9 @@ const Footer = () => {
 const footerStyle = {
     backgroundColor: 'blue',
     color: 'pink',
+    textAlign: 'left',
+    width: 'auto',
+    clear: 'both',
 }
 
 export default Footer
