@@ -1,9 +1,25 @@
 import Blogs from './Blogs';
+import { useEffect, useState } from "react";
+import xml2js from 'xml2js';
+import BlogPage from './BlogPage';
 
-const Main = () => {
+const Main = ({ view }) => {
+    const [blogs, setBlogs] = useState([]);
+
+    useEffect(() => {
+        fetch('/blog_post_example.xml')
+            .then((response) =>
+                response.text())
+            .then((data) => {
+                xml2js.parseString(data, (err, result) => {
+                    setBlogs(result.blog.post);
+                });
+            });
+    }, []);
+
     return (
         <div style={mainStyle} className="main">
-        <Blogs />
+        {view === 'blogs' ?  <Blogs blogs={blogs}/> : <BlogPage blogs={blogs}/>}
         </div>
     );
 }
