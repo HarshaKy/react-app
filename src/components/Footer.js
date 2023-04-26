@@ -7,11 +7,12 @@ const Footer = () => {
 }
 
 const footerStyle = {
-    backgroundColor: 'blue',
+    backgroundColor: 'black',
     color: 'pink',
     textAlign: 'left',
-    width: 'auto',
+    width: '70%',
     clear: 'both',
+    padding: '10px'
 }
 
 export default Footer

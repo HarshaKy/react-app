@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Blog = ({ blog }) => {
     return (
         <div className="blogSummary">
-            <Link to={`/blog/${blog.id[0]}`}>
+            <Link style={{color: 'pink'}} to={`/blog/${blog.id[0]}`}>
                 <h1>{blog.title[0]}</h1>
             </Link>
             <p>Posted on {blog.date[0]}</p>

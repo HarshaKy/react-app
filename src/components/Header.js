@@ -14,7 +14,8 @@ const headingStyle = {
     color: 'pink',
     backgroundColor: 'black',
     width: '100%',
-    textAlign: 'center'
+    textAlign: 'center',
+    padding: '10px'
 }
 
 export default Header

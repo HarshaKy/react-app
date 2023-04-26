@@ -25,12 +25,13 @@ const Main = ({ view }) => {
 }
 
 const mainStyle = {
-    width: '75%',
+    width: '70%',
     height: 'auto',
     float: 'left',
     text: 'center',
     color: 'pink',
-    backgroundColor: 'green'
+    backgroundColor: 'black',
+    padding: '10px'
 }
 
 export default Main;

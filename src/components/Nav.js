@@ -23,7 +23,7 @@ const Nav = () => {
     
     return (
         <nav style={navStyle}>
-            <Link to="/">Home</Link>
+            <Link style={{color: 'pink'}} to="/">Home</Link>
             <p>New Cat every 60 seconds!</p>
             {catJson.url ? <img style={{width: '100%', height: 'auto'}} src={`${cataas}${catJson.url}`} alt="cat" /> : <p>Loading...</p>}
         </nav>
@@ -33,8 +33,9 @@ const Nav = () => {
 const navStyle = {
     width: '25%',
     color: 'pink',
-    backgroundColor: 'brown',
-    float: 'right'
+    backgroundColor: 'black',
+    float: 'right',
+    padding: '10px'
 }
 
 export default Nav;
