@@ -6,10 +6,11 @@ const Blog = ({ blog }) => {
             <Link to={`/blog/${blog.id[0]}`}>
                 <h1>{blog.title[0]}</h1>
             </Link>
-            <p>{blog.date[0]}</p>
-            <p>{blog.author[0]}</p>
+            <p>Posted on {blog.date[0]}</p>
+            <p>by {blog.author[0]}</p>
             <p>{blog.summary[0]['text']}</p>
             <img
+                style={{ width: '50%', height: 'auto' }}
                 className="summaryImage"
                 src={blog.summary[0]['image_path']}
                 alt={blog.summary[0]['text']}

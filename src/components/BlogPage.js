@@ -7,9 +7,10 @@ const BlogPage = ({ blogs }) => {
             {
                 blog ?
                     <><h1>{blog.title[0]}</h1>
-                        <p>{blog.date[0]}</p>
-                        <p>{blog.author[0]}</p>
+                        <p>Posted on {blog.date[0]}</p>
+                        <p>by {blog.author[0]}</p>
                         <img
+                            style={{ width: '100%', height: 'auto' }}
                             className="summaryImage"
                             src={blog.summary[0]['image_path']}
                             alt={blog.summary[0]['text']} />
