@@ -1,4 +1,4 @@
-# Welcome to my first single page React Application!
+# Welcome to my first single page React application!
 
 My web application displays 3 blog posts on the homepage. This includes a clickable title, which renders the full blog post, the date on which it was posted, and the author who wrote the article. It also includes a brief summary and an image. The sidenav has a link to the homepage. Here comes the best part - every 60 seconds a random image of a cat is rendered on the sidenav. 
 
